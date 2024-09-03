@@ -5,4 +5,6 @@ module com.example.quaternarycalculator {
 
     opens com.example.quaternarycalculator to javafx.fxml;
     exports com.example.quaternarycalculator;
+    exports;
+    opens to
 }

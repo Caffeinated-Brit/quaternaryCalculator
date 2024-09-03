@@ -1,3 +1,5 @@
+package com.example.quaternarycalculator;
+
 import java.util.Scanner;
 
 public class oneNum {
