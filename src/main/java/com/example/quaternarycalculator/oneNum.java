@@ -47,7 +47,7 @@ public class oneNum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("do you want to find?:\n1.)square\n2.)square root");
+        System.out.print("do you want to find?:\n1.)square\n2.)square root\n");
         String userChoice = scanner.nextLine();
 
         if (userChoice.equals("1")){
@@ -60,7 +60,7 @@ public class oneNum {
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
-        } if (userChoice.equals("2")){
+        } else if (userChoice.equals("2")){
             System.out.print("Enter a quaternary integer: ");
             String quaternaryInput = scanner.nextLine();
 
