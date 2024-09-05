@@ -1,17 +1,17 @@
 FUNCTIONAL REQUIREMENTS CHECKLIST:
 
 High Priority:
- o The system shall only have four buttons for numbers: 0, 1, 2, and 3
+ ✅ The system shall only have four buttons for numbers: 0, 1, 2, and 3
  o The system can do operations with two numbers like below
      - The user shall enter a quaternary number, then press an operation button, then enter another number, finally pressing the 'equal' button shall display the result of the operation
      - These operations shall be addition, subtraction, division, and multiplication
- o The system shall have a visible display for the entered numbers and the result of the operation
+ ✅ The system shall have a visible display for the entered numbers and the result of the operation
 
  *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*
 
 Medium Priority:
- o The system shall look like a regular calculator
- o The system shall work on only integer values
+ ✅ The system shall look like a regular calculator
+ ✅ The system shall work on only integer values
  o The display shall view the number both in quaternary and in decimal by using a toggle button
 
 *------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*

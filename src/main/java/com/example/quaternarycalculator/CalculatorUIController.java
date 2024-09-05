@@ -128,17 +128,17 @@ public class CalculatorUIController {
     private void OnSqRtButtonClick() {
         //TODO : create sqrt function for numbers & set result label to result of function
         inputLabelFullInput.setText(inputLabelFullInput.getText() + " √ |");
-        inputLabelResult.setText(inputLabelResult.getText() + " √ |");
+        //inputLabelResult.setText(inputLabelResult.getText() + " √ |");
         //action1 = "√";
-        //inputLabelResult.setText(MultiNumOperations.squareRoot(num1));
+        inputLabelResult.setText(oneNum.quaternarySquareRoot(num1));
     }
 
     @FXML
     private void OnSquareButtonClick() {
         //TODO : create square function for numbers & set result label to result of function
         inputLabelFullInput.setText(inputLabelFullInput.getText() + " ² |");
-        inputLabelResult.setText(inputLabelResult.getText() + " ² |");
-        //inputLabelResult.setText(MultiNumOperations.square(num1));
+        //inputLabelResult.setText(inputLabelResult.getText() + " ² |");
+        inputLabelResult.setText(oneNum.quaternarySquare(num1));
     }
     // ----------------------------------------------------------------------------------------
 
@@ -153,6 +153,8 @@ public class CalculatorUIController {
     private void cPress(){
         inputLabelFullInput.setText("");
         inputLabelResult.setText("");
+        inputResultString = "";
+        fullInputString = "";
     }
 
     @FXML
@@ -170,10 +172,6 @@ public class CalculatorUIController {
         //inputLabelResult.setText(inputLabelResult.toString().substring(0, inputLabelResult.length() - 1));
     }
 
-
-    private void ActionCountManage(){
-
-    }
 
     private void DoMathCheck() {
         // if num of action presses is greater than 0 & even
@@ -194,6 +192,7 @@ public class CalculatorUIController {
 
                     System.out.println("Added Result: " + addedNums);
                     inputLabelResult.setText(addedNums);
+                    inputResultString = addedNums;
                     break;
 
                 case "minus":
@@ -201,6 +200,7 @@ public class CalculatorUIController {
 
                     System.out.println("Subtracted Result: " + subNums);
                     inputLabelResult.setText(subNums);
+                    inputResultString = subNums;
                     break;
 
                 case "div":
@@ -208,6 +208,7 @@ public class CalculatorUIController {
 
                     System.out.println("Divided Result: " + divNums);
                     inputLabelResult.setText(divNums);
+                    inputResultString = divNums;
                     break;
 
                 case "mult":
@@ -215,6 +216,7 @@ public class CalculatorUIController {
 
                     System.out.println("Multiplied Result: " + multNums);
                     inputLabelResult.setText(multNums);
+                    inputResultString = multNums;
                     break;
             }
         }
