@@ -1,7 +1,9 @@
 # quaternaryCalculator
 
 Josh = The system can do operations with two numbers + The system shall work on only integer values + testing
+
 Sang = The system can do operations with one number + The system shall work on only integer values + testing
+
 Mason = The system UI & System UI controller
 
 Chandler = System controller, UI, & backend integration + bug fixes
