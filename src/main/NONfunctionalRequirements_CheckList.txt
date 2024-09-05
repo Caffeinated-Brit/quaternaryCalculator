@@ -1,0 +1,3 @@
+NONFUNCTIONAL REQUIREMENTS:
+
+✔ The system shall be implemented in IntelliJ Idea and JDK >=12
