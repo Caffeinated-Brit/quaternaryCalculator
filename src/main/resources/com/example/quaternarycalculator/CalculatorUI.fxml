@@ -7,24 +7,24 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quaternarycalculator.CalculatorUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="428.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quaternarycalculator.CalculatorUIController">
    <children>
       <Button fx:id="zeroButton" layoutX="28.0" layoutY="154.0" mnemonicParsing="false" onAction="#addZero" prefHeight="40.0" prefWidth="46.0" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="oneButton" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#addOne" prefHeight="40.0" prefWidth="46.0" text="1">
+      <Button fx:id="oneButton" layoutX="28.0" layoutY="222.0" mnemonicParsing="false" onAction="#addOne" prefHeight="40.0" prefWidth="46.0" text="1">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="twoButton" layoutX="28.0" layoutY="259.0" mnemonicParsing="false" onAction="#addTwo" prefHeight="40.0" prefWidth="46.0" text="2">
+      <Button fx:id="twoButton" layoutX="28.0" layoutY="294.0" mnemonicParsing="false" onAction="#addTwo" prefHeight="40.0" prefWidth="46.0" text="2">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="threeButton" layoutX="28.0" layoutY="314.0" mnemonicParsing="false" onAction="#addThree" prefHeight="40.0" prefWidth="46.0" text="3">
+      <Button fx:id="threeButton" layoutX="28.0" layoutY="368.0" mnemonicParsing="false" onAction="#addThree" prefHeight="40.0" prefWidth="46.0" text="3">
          <font>
             <Font size="18.0" />
          </font>
@@ -49,13 +49,13 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="equalButton" layoutX="133.0" layoutY="314.0" mnemonicParsing="false" onAction="#equalPress" prefHeight="40.0" prefWidth="46.0" text="=">
+      <Button fx:id="equalButton" layoutX="132.0" layoutY="368.0" mnemonicParsing="false" onAction="#equalPress" prefHeight="40.0" prefWidth="124.0" text="=">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c7c7c7" height="56.0" layoutX="21.0" layoutY="72.0" opacity="0.39" stroke="BLACK" strokeType="INSIDE" width="243.0" />
-      <Separator layoutX="99.0" layoutY="154.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="12.0" />
+      <Separator layoutX="97.0" layoutY="154.0" orientation="VERTICAL" prefHeight="254.0" prefWidth="12.0" />
       <Label layoutX="27.0" layoutY="14.0" text="Quaternary Calculator">
          <font>
             <Font name="System Italic" size="24.0" />
@@ -85,6 +85,11 @@
       <Button fx:id="equalButton1" layoutX="210.0" layoutY="314.0" mnemonicParsing="false" onAction="#cPress" prefHeight="40.0" prefWidth="46.0" text="C">
          <font>
             <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="backSpaceButton" layoutX="133.0" layoutY="314.0" mnemonicParsing="false" onAction="#backSpacePress" prefHeight="40.0" prefWidth="46.0" text="⌫">
+         <font>
+            <Font size="17.0" />
          </font>
       </Button>
    </children>
