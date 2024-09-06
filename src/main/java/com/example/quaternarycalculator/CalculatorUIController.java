@@ -2,9 +2,7 @@ package com.example.quaternarycalculator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
 
-import java.sql.SQLOutput;
 
 public class CalculatorUIController {
 
@@ -14,7 +12,6 @@ public class CalculatorUIController {
     private String num2;
 
     private String action1;
-    private String action2;
 
     private int actionCount;
 
@@ -126,52 +123,108 @@ public class CalculatorUIController {
 
     @FXML
     private void OnSqRtButtonClick() {
-        //TODO : create sqrt function for numbers & set result label to result of function
-        inputLabelFullInput.setText(inputLabelFullInput.getText() + " √ |");
-        //inputLabelResult.setText(inputLabelResult.getText() + " √ |");
-        //action1 = "√";
-        inputLabelResult.setText(oneNum.quaternarySquareRoot(num1));
+        try{
+            actionCount++;
+            inputLabelFullInput.setText(inputLabelFullInput.getText() + " √ |");
+            inputLabelResult.setText(inputLabelResult.getText() + " √ |");
+
+            action1 = " sqrRoot ";
+
+            fullInputString = fullInputString + " sqrRoot ";
+            inputResultString = inputResultString + " sqrRoot ";
+        } catch (Exception e){
+            System.out.println(e);
+        }
     }
 
     @FXML
     private void OnSquareButtonClick() {
-        //TODO : create square function for numbers & set result label to result of function
-        inputLabelFullInput.setText(inputLabelFullInput.getText() + " ² |");
-        //inputLabelResult.setText(inputLabelResult.getText() + " ² |");
-        inputLabelResult.setText(oneNum.quaternarySquare(num1));
+        try {
+            actionCount++;
+            inputLabelFullInput.setText(inputLabelFullInput.getText() + " ² |");
+            inputLabelResult.setText(inputLabelResult.getText() + " ² |");
+
+            action1 = " sqr ";
+
+            fullInputString = fullInputString + " sqr ";
+            inputResultString = inputResultString + " sqr ";
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
     }
     // ----------------------------------------------------------------------------------------
 
     @FXML
-    private void equalPress(){
-        actionCount++;
-        inputLabelFullInput.setText("");
-        DoMathCheck();
+    private void equalPress() {
+        try {
+            actionCount++;
+            inputLabelFullInput.setText("");
+            if ((action1.equals(" sqr ")||(action1.equals(" sqrRoot ")))){
+                DoSquareMath();
+            } else {
+                DoMathCheck();
+            }
+        } catch (Exception e){
+            System.out.println("Error: " + e);
+        }
     }
 
     @FXML
     private void cPress(){
-        inputLabelFullInput.setText("");
-        inputLabelResult.setText("");
-        inputResultString = "";
-        fullInputString = "";
+        try {
+            inputLabelFullInput.setText("");
+            inputLabelResult.setText("");
+            inputResultString = "";
+            fullInputString = "";
+        } catch (Exception e){
+            System.out.println("Error: " + e);
+        }
     }
 
     @FXML
     private void backSpacePress(){
+
         String fullInput = inputLabelFullInput.getText();
         String resultLabel = inputLabelResult.getText();
 
-        //System.out.println(fullInput);
-        //System.out.println(resultLabel);
+            //System.out.println(fullInput);
+            //System.out.println(resultLabel);
+        try {
+            inputLabelFullInput.setText(fullInput.substring(0, fullInput.length() - 1));
+            inputLabelResult.setText(resultLabel.substring(0, resultLabel.length() - 1));
 
-        inputLabelFullInput.setText(fullInput.substring(0, fullInput.length() - 1));
-        inputLabelResult.setText(resultLabel.substring(0, resultLabel.length() - 1));
-
-        //inputLabelFullInput.setText(inputLabelFullInput.toString().substring(0, inputLabelFullInput.length() - 1));
-        //inputLabelResult.setText(inputLabelResult.toString().substring(0, inputLabelResult.length() - 1));
+            //inputLabelFullInput.setText(inputLabelFullInput.toString().substring(0, inputLabelFullInput.length() - 1));
+            //inputLabelResult.setText(inputLabelResult.toString().substring(0, inputLabelResult.length() - 1));
+        } catch (Exception e){
+            System.out.println("Error: " + e);
+        }
     }
 
+    private void DoSquareMath() {
+        System.out.println("Action: " + action1);
+
+        System.out.println("inputResultString: " + inputResultString);
+        String[] parts = inputResultString.split(action1);
+        num1 = parts[0].trim();
+        System.out.println("Number: " + num1);
+
+        switch (action1.trim()){
+            case "sqrRoot":
+                String sqrNum = oneNum.quaternarySquareRoot(num1);
+                System.out.println("Square Root: " + sqrNum);
+                inputLabelResult.setText(sqrNum);
+                inputResultString = sqrNum;
+                break;
+
+            case "sqr":
+                String sqr = oneNum.quaternarySquare(num1);
+                System.out.println("Square: " + sqr);
+                inputLabelResult.setText(sqr);
+                inputResultString = sqr;
+                break;
+        }
+    }
 
     private void DoMathCheck() {
         // if num of action presses is greater than 0 & even
