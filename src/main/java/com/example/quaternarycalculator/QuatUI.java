@@ -12,16 +12,12 @@ public class QuatUI extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CalculatorUI.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.setResizable(false);
         stage.setTitle("QuaternaryCalculator");
         stage.show();
-
-        ((QuatController)loader.getController()).init(stage);
-
-
 
     }
 }
